@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY"; // Replace with your actual API key
+const apiKey = 'ea4ef61228194972a082def58aca7873'; // Replace with your actual API key
 let currentTheme = localStorage.getItem('theme') || 'light-mode'; // Default theme is light
 
 document.addEventListener("DOMContentLoaded", () => {
