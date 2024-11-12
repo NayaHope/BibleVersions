@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible WebApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-docx-js/0.1.0/html-docx.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Bible WebApp</h1>
+        <p>Search for Bible verses and read them online.</p>
+        <button id="theme-toggle">Switch to Dark Mode</button>
+    </header>
+
+    <section id="search-section">
+        <div class="input-group">
+            <label for="book">Book of the Bible:</label>
+            <input type="text" id="book" placeholder="e.g., John">
+        </div>
+        <div class="input-group">
+            <label for="chapter">Chapter:</label>
+            <input type="number" id="chapter" placeholder="e.g., 3">
+        </div>
+        <div class="input-group">
+            <label for="verse">Verse:</label>
+            <input type="number" id="verse" placeholder="e.g., 16">
+        </div>
+        <div class="input-group">
+            <label for="version">Version:</label>
+            <select id="version">
+                <option value="KJV">King James Version</option>
+                <option value="NIV">New International Version</option>
+                <option value="ESV">English Standard Version</option>
+            </select>
+        </div>
+        <button onclick="fetchVerse()">Get Verse</button>
+    </section>
+
+    <section id="customization-section">
+        <h3>Customize Font</h3>
+        <div class="input-group">
+            <label for="font-style">Font Style:</label>
+            <select id="font-style">
+                <option value="Arial">Arial</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="font-size">Font Size:</label>
+            <input type="number" id="font-size" min="10" max="40" value="16">
+        </div>
+        <div class="input-group">
+            <label for="font-color">Font Color:</label>
+            <input type="color" id="font-color" value="#000000">
+        </div>
+    </section>
+
+    <section id="output-section">
+        <h2>Verse Output</h2>
+        <p id="verse-text">Your verse will appear here.</p>
+    </section>
+
+    <section id="export-section">
+        <h3>Export Options</h3>
+        <button onclick="exportToImage()">Export as Image</button>
+        <button onclick="exportToPDF()">Export as PDF</button>
+        <button onclick="exportToDoc()">Export as DOC</button>
+    </section>
+
+    <footer>
+        <p>Powered by <a href="https://scripture.api.bible" target="_blank">Scripture API</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
